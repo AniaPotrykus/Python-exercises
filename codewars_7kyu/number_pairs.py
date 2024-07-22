@@ -24,12 +24,12 @@ def get_larger_numbers(a, b):
             
     return large
 
-    # solution using zip()
+    # solution with zip()
 
     def get_larger_numbers(a, b):
 
         zipped = zip(a, b)
-        
+
         l = []
 
         for x, y in zipped:
