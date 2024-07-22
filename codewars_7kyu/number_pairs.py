@@ -23,3 +23,19 @@ def get_larger_numbers(a, b):
             i += 1
             
     return large
+
+    # solution using zip()
+
+    def get_larger_numbers(a, b):
+
+        zipped = zip(a, b)
+        
+        l = []
+
+        for x, y in zipped:
+            if x > y:
+                l.append(x)
+            else:
+                l.append(y)
+
+        return l
