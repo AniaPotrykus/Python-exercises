@@ -1,0 +1,15 @@
+def decimal_to_hexadecimal(num):
+
+  remainder = []
+  hexa_nums = "0123456789ABCDEF"
+  result = []
+
+  while num > 0:
+    num_2 = num % 16
+    remainder.append(num_2)
+    num = num // 16
+
+  for el in reversed(remainder):
+    result.append(hexa_nums[el])
+
+  return "".join(result)
