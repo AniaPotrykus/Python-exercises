@@ -1,15 +1,70 @@
-def decimal_to_hexadecimal(num):
+    def decimal_to_hexadecimal(num):
 
-  remainder = []
-  hexa_nums = "0123456789ABCDEF"
-  result = []
+        remainder = []
+        hexa_nums = "0123456789ABCDEF"
+        result = []
 
-  while num > 0:
-    num_2 = num % 16
-    remainder.append(num_2)
-    num = num // 16
+        while num > 0:
+            num_2 = num % 16
+            remainder.append(num_2)
+            num = num // 16
 
-  for el in reversed(remainder):
-    result.append(hexa_nums[el])
+        for el in reversed(remainder):
+            result.append(hexa_nums[el])
 
-  return "".join(result)
+        return "".join(result)
+
+
+
+
+    def hexadecimal_to_decimal(input_str):
+
+        indexes = []
+        hex_nums = "0123456789ABCDEF"
+        results = []
+
+        for el in input_str:
+            indexes.append(hex_nums.index(el))
+
+        for i, el in enumerate(indexes):
+            power = len(input_str) - i - 1
+            results.append(el * 16 ** power)
+
+        return sum(results)
+
+
+
+
+
+    def decimal_to_binary(num):
+
+        if num == 0:
+            return "0"
+
+        remainder = []
+        final_answer = ""
+
+        while num > 0:
+            num_2 = num % 2
+            remainder.append(num_2)
+            num = num // 2
+
+        result = reversed(remainder)
+
+        for el in result:
+            final_answer += str(el)
+
+        return final_answer
+
+
+
+
+    def binary_to_decimal(input_str):
+
+        result = []
+
+        for i, el in enumerate(input_str):
+            power = len(input_str) - i - 1
+            result.append(int(el) * 2 **power)
+
+        return sum(result)
